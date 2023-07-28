@@ -1,383 +1,131 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Trekker's</title>
-    <style>
-        .Navbar
-        {
-            position: fixed;
-            background-color: seagreen;
-            color: white;
-            height: 50px;
-            width: 100%;
-            box-shadow: 2px 2px;
-            opacity: 0.9;
-            z-index: 100;
-            overflow: hidden;
-        }
-        a
-        {
-            color: inherit;
-            
-            font-size:larger;
-        }
-        .nav:hover
-        {
-            color: seagreen;
-            background-color: white;
-            transition-duration:0.5s;
-        }
-        .treks
-        {
-            text-decoration: none;
-        }
-        .treks:hover
-        {
-            font-size: 140%;
-            transition-duration:0.5s;
-        }
-        html{
-            scroll-behavior: smooth;
-        }
-        @media (max-width: 600px) 
-        {
-            .Navbar 
-            {
-                position: relative;
-                width: 100%;
-                height: auto;
-                box-shadow: none;
-                opacity: 1;
-            }
-            .Navbar a
-            {
-                float: left;
-                padding: 10px 20px;
-            }
-            .Navbar a.active 
-            {
-                background-color: seagreen;
-                color: white;
-            }
-        }
-        /* Responsive images */
-        img 
-        {
-            width: 100%;
-            height: auto;
-        }
-        /* Accessible code */
-        body 
-        {
-            font-family: sans-serif;
-        }
-        h1, h2 
-        {
-            font-weight: normal;
-        }
-        p 
-        {
-            margin-bottom: 1em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Trekkers</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Responsive Styles */
+    @media screen and (max-width: 768px) {
+      /* Adjustments for smaller screens */
+      /* Example: Modifying the header and navigation layout */
+      header {
+        padding: 10px;
+      }
+      nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      nav li {
+        margin: 5px;
+      }
+    }
+  </style>
 </head>
+<body>
+  <!-- Header -->
+  <header>
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="index.html" target="_blank">Home</a></li>
+        <li><a href="about.html" target="_blank">About Us</a></li>
+        <li><a href="destinations.html" target="_blank">Trekking Destinations</a></li>
+        <li><a href="packages.html" target="_blank">Trekking Packages</a></li>
+        <li><a href="gallery.html" target="_blank">Gallery</a></li>
+        <li><a href="blog.html" target="_blank">Blog</a></li>
+        <li><a href="contact.html" target="_blank">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<body style="color: seagreen;">
-    <div class="Navbar">
-        <h2 style="margin: 2px;">The Trekkers</h2>
-        <a class="nav" href="" style="text-decoration:none ;">Home</a>
-        <a  href="" style="text-decoration:none ; background-color: seagreen;">Treks </a>
-    </div>
+  <!-- Home Section -->
+  <section id="home">
+    <h1>Welcome to The Trekkers</h1>
+    <p>Join us on thrilling trekking adventures in breathtaking locations.</p>
+    <a href="#contact" class="cta-button"  target="_blank">Join a Trek</a>
+  </section>
 
-    <div class="Navbar" style="margin-top: 50px; background-color: seagreen; opacity: 0.9;">
-        <a class="nav" style="text-decoration: none; margin-right: 10px; " href="#Cycling">Cycling</a>
-        <a class="nav" style="text-decoration: none; margin-right: 10px;" href="#Trek 1 day">Trek 1 Day</a>
-        <a class="nav" style="text-decoration: none; margin-right: 10px;" href="#Night Trekking">Night Trekking</a>
-        <a class="nav" style="text-decoration: none; margin-right: 10px;" href="#Rappling Waterfall">Rappling Waterfall</a>
-        <a class="nav" style="text-decoration: none; margin-right: 10px;" href="#Camping">Camping</a>
-        <a class="nav" style="text-decoration: none; margin-right: 10px;" href="#Jugnu">Jugnu</a>
-        <a class="nav" style="text-decoration: none; margin-right: 10px;" href="#Backpacking Trip">Backpacking</a>
-        <a class="nav" style="text-decoration: none; margin-right: 10px;" href="#Thrilling and Adventure">Thrilling and...</a>
-        <a class="nav" style="text-decoration: none; margin-right: 10px;" href="#Hidden Places">Hidden Places</a>
-        <a class="nav" style="text-decoration: none; margin-right: 10px;" href="#Mumbai Darshan">Mumbai darshan</a>
-        <a class="nav" style="text-decoration: none; margin-right: 10px;" href="#Easy Trek">Easy Trek</a>
-        <a class="nav" style="text-decoration: none; margin-right: 10px;" href="#Trutle Festival">Turtle Festival</a>
-    </div>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About The Trekkers</h2>
+    <p>Discover our mission, values, and the unique experiences we offer.</p>
+    <!-- Content about your organization -->
+  </section>
 
-    <div style="text-align: center; position: relative;">
-        <img src="LOGO.png" alt="">
-        <h1 style="height: 200px; padding-top: 50px; font-size: xx-large;">Welcome to the Trekers</h1>
-    </div>
+  <!-- Destinations Section -->
+  <section id="destinations">
+    <h2>Trekking Destinations</h2>
+    <ul>
+      <li>
+        <img src="destination1.jpg" alt="Destination 1">
+        <h3>Destination 1</h3>
+        <p>Description of the destination.</p>
+        <!-- Additional details about the destination -->
+      </li>
+      <li>
+        <!-- Repeat for other destinations -->
+      </li>
+    </ul>
+  </section>
 
-    <h1>About Us</h1>
-    <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-    <p>Jo bhi likhna hai likhdo</p>
-    <br>
-    <br>
-    <!-- MAke corousel -->
-    <div id="Cycling">
-        <h1>Cycling</h1>
-        <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-        <div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://th.bing.com/th?id=OIP.UpfrLn5DcapDPbmoJOCQawHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white;" href="">South Mumbai</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 300px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://th.bing.com/th?id=OIP.NSLPKOcvHjvffSYBc0cR-gHaE9&w=305&h=204&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunrise</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 600px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://th.bing.com/th?id=OIP.5TFdq1ah-13yRK4aqMqt8wHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunset</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-        </div>
+  <!-- Trekking Packages Section -->
+  <section id="packages">
+    <h2>Trekking Packages</h2>
+    <div class="package">
+      <h3>Package 1</h3>
+      <p>Package description and details.</p>
+      <p>Price: ₹400 to ₹1700</p>
+      <!-- Additional information and booking form -->
     </div>
+    <div class="package">
+      <!-- Repeat for other packages -->
+    </div>
+  </section>
 
-    <div id="Trek 1 day" style="margin-top: 200px;">
-        <h1>Trek 1 day</h1>
-        <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-        <div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://www.shadowsgalore.com/wp-content/uploads/2013/03/Mumbai-Marine-Drive.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white;" href="">South Mumbai</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 300px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunrise</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 600px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunset</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-        </div>
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="image-gallery">
+      <img src="gallery1.jpg" alt="Gallery Image 1">
+      <!-- Repeat for other gallery images -->
     </div>
-           
-    <div id="Night Trekking" style="margin-top: 200px;">
-        <h1>Night Trekking</h1>
-        <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-        <div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://www.shadowsgalore.com/wp-content/uploads/2013/03/Mumbai-Marine-Drive.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white;" href="">South Mumbai</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 300px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunrise</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 600px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunset</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-        </div>
-    </div>
+  </section>
 
-    <div id="Rappling Waterfall" style="margin-top: 200px;">
-        <h1>Rappling Waterfall</h1>
-        <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-        <div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://www.shadowsgalore.com/wp-content/uploads/2013/03/Mumbai-Marine-Drive.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white;" href="">South Mumbai</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 300px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunrise</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 600px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunset</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-        </div>
+  <!-- Blog Section -->
+  <section id="blog">
+    <h2>Blog</h2>
+    <div class="blog-post">
+      <h3>Blog Post Title</h3>
+      <p>Blog post excerpt or summary.</p>
+      <a href="blog-post.html"  target="_blank">Read More</a>
     </div>
-                
-    <div id="Camping" style="margin-top: 200px;">
-        <h1>Camping</h1>
-        <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-        <div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://www.shadowsgalore.com/wp-content/uploads/2013/03/Mumbai-Marine-Drive.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white;" href="">South Mumbai</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 300px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunrise</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 600px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunset</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-        </div>
+    <div class="blog-post">
+      <!-- Repeat for other blog posts -->
     </div>
-                    
-    <div id="Jugnu" style="margin-top: 200px;">
-        <h1>Jugnu</h1>
-        <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-        <div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://www.shadowsgalore.com/wp-content/uploads/2013/03/Mumbai-Marine-Drive.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white;" href="">South Mumbai</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 300px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunrise</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 600px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunset</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-        </div>
-    </div>
-                        
-    <div id="Backpacking Trip" style="margin-top: 200px;">
-        <h1>Backpacking Trip</h1>
-        <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-        <div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://www.shadowsgalore.com/wp-content/uploads/2013/03/Mumbai-Marine-Drive.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white;" href="">South Mumbai</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 300px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunrise</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 600px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunset</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-        </div>
-    </div>
+  </section>
 
-    <div id="Thrilling and Adventure" style="margin-top: 200px;">
-        <h1>Thrilling and Adventure Level Up Trek</h1>
-        <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-        <div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://www.shadowsgalore.com/wp-content/uploads/2013/03/Mumbai-Marine-Drive.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white;" href="">South Mumbai</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 300px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunrise</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 600px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunset</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-        </div>
-    </div>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Get in touch with The Trekkers team.</p>
+    <a href="http://wa.me//+918082415831" target="_blank"> Vivek Gangar</a>
+    <a href="http://wa.me//+918108649992"> Yogita Dabolkar</a>
+    <!-- Contact form or contact information -->
+  </section>
 
-    <div id="Hidden Places" style="margin-top: 200px;">
-        <h1>Hidden Places</h1>
-        <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-                <div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://www.shadowsgalore.com/wp-content/uploads/2013/03/Mumbai-Marine-Drive.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white;" href="">South Mumbai</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 300px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunrise</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 600px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunset</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="Mumbai Darshan" style="margin-top: 200px;">
-        <h1>Mumbai Darshan</h1>
-        <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-                <div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://www.shadowsgalore.com/wp-content/uploads/2013/03/Mumbai-Marine-Drive.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white;" href="">South Mumbai</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 300px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunrise</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 600px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunset</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="Easy Trek" style="margin-top: 200px;">
-        <h1>Easy Trek</h1>
-        <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-        <div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://www.shadowsgalore.com/wp-content/uploads/2013/03/Mumbai-Marine-Drive.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white;" href="">South Mumbai</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 300px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunrise</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 600px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunset</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-        </div>
-    </div>
-    <div id="Turtle Festival" style="margin-top: 200px;">
-        <h1>Turle Festival</h1>
-        <hr style="border-width: 3px; border-color: seagreen; width: 100%;">
-        <div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://www.shadowsgalore.com/wp-content/uploads/2013/03/Mumbai-Marine-Drive.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white;" href="">South Mumbai</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 300px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunrise</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-            <div style="box-shadow: 2px 2px 7px 2px; height: 160px; width: 240px; position: absolute; margin-left: 600px;">
-                <img style="height: 120px; width: inherit; position: absolute;" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Manori-01.jpg" alt="">
-                <a class="treks" style="position: absolute; margin-top: 70px; color: white; text-decoration: none;" href="">Manori: Sunset</a>
-                <p style="position: absolute; margin-top: 120px;">Cycling ka info</p>
-            </div>
-        </div>
-    </div>
+  <!-- Footer -->
+  <footer>
+    <ul class="social-icons">
+      <li><a href="https://www.facebook.com/thetrekers2020/" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a></li>
+      <li><a href="https://instagram.com/thetrekers/" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a></li>
+	<li><a href="https://www.google.com/search?output=search&q=The+Trekers&ludocid=2872823697846608340&gsas=1&lsig=AB86z5XYXHS4SDU7n-5dut9dpzO4&kgs=e65daaf8f1050e86&shndl=-1&source=sh/x/kp/local/2&entrypoint=sh/x/kp/local#lrd=0x3be7b1a5ac63ecbd:0x27de51eeac78a1d4,1,,,,"><img src="instagram-icon.png" alt="Google Reviews" target="_blank"></a></li>
+      <!-- Add other social media links and icons -->
+      <a href="A" target="_blank"> Connect with the Web Developer</a>
+      <p>&copy; 2023 The Trekkers. All rights reserved.</p>
+    </ul>
+  </footer>
 </body>
 </html>
