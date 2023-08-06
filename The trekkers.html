@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3{
+            color:forestgreen;
+        }
+
+    </style>
+    <script>
+        
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        function SubForm()
+        {console.log(document.getElementById("jain").value);
+            if(document.getElementById("input name").value!="" & document.getElementById("input email").value!="" & document.getElementById("input number").value!="" & /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("input email").value))
+            {document.getElementById("output").style.opacity=1;
+            document.getElementById("output").style.zIndex=1;
+            document.getElementById("input").style.opacity=0;
+            document.getElementById("input").style.zIndex=-1;
+            document.getElementById("Confirmation").style.backgroundColor="seagreen";
+            document.getElementById("name").innerHTML="Name:"+document.getElementById("input name").value;
+            document.getElementById("email").innerHTML="Email:"+document.getElementById("input email").value;
+            document.getElementById("number").innerHTML="Phone No.:"+document.getElementById("input number").value;
+            }
+            else
+            {
+                document.getElementById("warning").innerHTML="Please enter all fields";
+            }
+            if(document.getElementById("jain").checked)
+            {document.getElementById("food").innerHTML="Food: Jain";
+        }
+        else if(document.getElementById("non jain").checked)
+        {
+            document.getElementById("food").innerHTML="Food: Non-Jain";
+        }
+        }
+        function Back()
+        {
+            document.getElementById("input").style.opacity=1;
+            document.getElementById("input").style.zIndex=1;
+            document.getElementById("output").style.opacity=0;
+            document.getElementById("output").style.zIndex=-1;
+            document.getElementById("Confirmation").style.backgroundColor="lawngreen";
+            document.getElementById("warning").innerHTML="";
+        }
+    </script>
+</head>
+<body>
+    <div style="position: absolute; height: 60%; border-radius: 3px; border-width: 5px; border-color: forestgreen; margin: 20px;">
+        <button style="width: 500px; height: 100px; background-color: seagreen; border-width: 0px;">Contact Details</button>
+        <button id="Confirmation" style="width: 500px; height: 100px; border-width: 0px; background-color: lawngreen;">Confirmation</button>
+        <div style="position: absolute;" id="input">
+        <br>
+        <h3>Contact Details</h3>
+        <form id="myForm">
+            <label >Full Name</label>
+            <br/>
+            <input id="input name" name="full_name" required/>
+            <br/>
+            <label >Email</label>
+            <br/>
+            <input id="input email" type="email" name="email" required/>
+            <br>
+            <label >Phone No.</label>
+            <br>
+            <input id="input number" type="number" name="phone_no" required>
+            <br>
+            <input id="jain" type="radio" name="Jain">
+            <label>Jain</label>
+            <br>
+            <input id="non jain" type="radio" name="Jain"/>
+            <label>Non Jain</label>
+            <br/>
+            <br/>
+          
+          <button type="button" onclick="SubForm()">Submit</button>
+          <p id="warning" style="color: red;"></p>
+        </form>
+        </div>
+    <div style="position: absolute; opacity: 0; z-index: -1; margin-left: 500px;" id="output">
+        <h3>Review Your booking</h3>
+        <ul>
+            <li>Event Name</li>
+            <li id="name">Full Name</li>
+            <li id="email">email</li>
+            <li id="number">number</li>
+            <li id="food">Food</li>
+        </ul>
+        <h3>Payment Details</h3>
+        <p>Detailed billing information</p>
+        <br>
+        <h3>Payment Methods</h3>
+        <p>Rupay redirect button</p>
+        <br>
+        <button onclick="Back()">Back</button>
+    </div>
+    </div>
+</body>
+</html>
