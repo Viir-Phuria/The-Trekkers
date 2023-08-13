@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script>
+    function SubForm (){
+        $.ajax({
+            url:"https://api.apispreadsheets.com/data/ddj5sWR2zsEkp6TV/",
+            type:"post",
+            data:$("#myForm").serializeArray(),
+            success: function(){
+                alert("Form Data Submitted :)")
+            },
+            error: function(){
+                alert("There was an error :(")
+            }
+        });
+    }
+    
+</script>
+</head>
+<body style="color: forestgreen;">
+    <h1>The Trekkers</h1>
+    <br>
+    <hr width="3px" color="forestgreen">
+    <h4>Let us help you make your adventures more fun</h4>
+    <br>
+    <h2>Contact Us</h2>
+    <div style="padding: 5px; position: absolute; margin-left: 40%; box-shadow: 4px 4px 20px 1px forestgreen; ">
+    <form id="myForm">
+        <label>Full Name</label>
+        <br/>
+        <input name="full_name" />
+        <br/>
+        <label>Number</label>
+        <br>
+        <input type="number" name="number">
+        <br>
+        <label>Email</label>
+        <br/>
+        <input type="email" name="email" />
+        <br/>
+        <label>Date</label>
+        <br>
+        <input type="datetime-local" name="date" id="date">
+        <br>
+        <label>Message</label>
+        <br/>
+        <textarea name="message">
+        </textarea>
+        <br/>
+        <br/>
+      </form>
+      <button onclick="SubForm()">Submit</button>
+    </div>
+    <script>
+        var today=new Date();
+        var yyyy = today.getFullYear();
+
+var mm = today.getMonth() + 1;
+
+var dd = today.getDate();
+
+if (mm < 10) {
+
+mm = '0' + mm;
+
+}
+
+if (dd < 10) {
+
+dd = '0' + dd;
+
+}
+
+var formattedDate = yyyy + '-' + mm + '-' + dd;
+
+// Set the input element value to the formatted date
+
+document.getElementById("date").value = formattedDate;
+    </script>
+</body>
+</html>
