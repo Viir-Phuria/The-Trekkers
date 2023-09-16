@@ -27,9 +27,6 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .btn-confirm {
-            background-color: lawngreen;
-        }
         .form-group {
             margin-bottom: 15px;
         }
@@ -72,7 +69,7 @@
             if (fullName !== "" && email !== "" && phoneNumber !== "" && isValidEmail(email)) {
                 document.getElementById("output").style.display = "block";
                 document.getElementById("input").style.display = "none";
-                document.getElementById("Confirmation").classList.add("btn-confirm");
+                document.getElementById("Confirmation").style.backgroundColor = "seagreen";
 
                 document.getElementById("name").innerHTML = "Name: " + fullName;
                 document.getElementById("email").innerHTML = "Email: " + email;
@@ -99,6 +96,17 @@
 
                 // You can submit the form data using AJAX here
                 // Example: $.ajax({ ... });
+                $.ajax({
+				url:"https://api.apispreadsheets.com/data/B4hr3eSzb7S4e0St/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
 
             } else {
                 document.getElementById("warning").innerHTML = "Please enter all fields and a valid email address.";
@@ -113,7 +121,7 @@
         function Back() {
             document.getElementById("input").style.display = "block";
             document.getElementById("output").style.display = "none";
-            document.getElementById("Confirmation").classList.remove("btn-confirm");
+            document.getElementById("Confirmation").style.backgroundColor = "darkseagreen";
             document.getElementById("warning").innerHTML = "";
         }
     </script>
@@ -121,7 +129,7 @@
 <body>
     <div class="container">
         <button class="btn">Contact Details</button>
-        <button id="Confirmation" class="btn">Confirmation</button>
+        <button id="Confirmation" class="btn" style="background-color: darkseagreen;">Confirmation</button>
         <div id="input">
             <h3>Contact Details</h3>
             <form id="myForm">
@@ -147,7 +155,19 @@
                 <div class="form-group">
                     <label for="people">Number of People</label>
                     <select id="people" name="people">
-                        <!-- Add options here -->
+                        <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
                     </select>
                 </div>
                 <button type="button" onclick="SubForm()">Submit</button>
