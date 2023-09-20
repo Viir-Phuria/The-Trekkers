@@ -72,82 +72,86 @@
             }
         }
     </style>
-    <script>
-          function SubForm (){
-        var timestamp = new Date().toISOString(); // Get the current timestamp in ISO format
-        var formattedTimestamp = timestamp.replace("T", " ").split(".")[0]; // Format the timestamp
-        
-        $("#timestamp").val(formattedTimestamp); // Set the value of the hidden input field
-        
-        var formData = $("#myForm").serializeArray();
-        
-        // Check if all required fields are filled
-        var allFieldsFilled = true;
-        formData.forEach(function(field) {
-            if (field.value.trim() === '') {
-                allFieldsFilled = false;
-            }
-        });
-        
-        if (!allFieldsFilled) {
-            alert("Please fill in all the required fields.");
-            return;
-        }
-        
-        $.ajax({
-            url:"https://api.apispreadsheets.com/data/joCiWyHHbwPFltEL/",
-            type:"post",
-            data: formData,
-            success: function(){
-                alert("Form Data Submitted :)");
-                displayTimestamp(formattedTimestamp); // Display the timestamp
-            },
-            error: function(){
-                alert("There was an error :(")
-            }
-        });
-    }
-    
-    function displayTimestamp(timestamp) {
-        $("#submittedTimestamp").text("Form Submitted at: " + timestamp);
-    }
-    </script>
 </head>
-<body>
+   <body>
     <div class="container">
-        <h3>Contact Us</h3>
-        <form id="myForm">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
             <div class="form-group">
-                <label>Full Name <span style="color: red">*</span></label>
-                <br/>
-                <input name="full_name" required />
-                <br/>
-                </div>
-                <div class="form-group">
-                <label>Number <span style="color: red">*</span></label>
-                <br>
-                <input type="number" name="number" required>
-                <br>
-                <div class="form-group">
-                <label>Email <span style="color: red">*</span></label>
-                <br/>
-                <input type="email" name="email" required />
-                <br/>
-                </div>
-                <div class="form-group">
-                <label>Message <span style="color: red">*</span></label>
-                <br/>
-                <textarea name="message" required></textarea>
-                <br/>
-                <!-- Hidden input field to store the timestamp -->
-                <input type="hidden" name="timestamp" id="timestamp">
-                </div>
-                <br/>
-                <br/>
+                <label for="full_name">Full Name *</label>
+                <input type="text" id="full_name" name="full_name" required>
+            </div>
+            <div class="form-group">
+                <label for="number">Number *</label>
+                <input type="tel" id="number" name="number" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <!-- Hidden input field to capture the timestamp -->
+            <input type="hidden" id="timestamp" name="timestamp">
+            <button type="submit">Submit</button>
         </form>
-        <button class="btn" onclick="SubForm()">Submit</button>
-        <div id="submittedTimestamp"></div>
+        <!-- Display the submission timestamp here -->
+        <p id="submittedTimestamp"></p>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        // Function to handle form submission
+        function SubForm() {
+            var timestamp = new Date().toISOString(); // Get the current timestamp in ISO format
+
+            // Add 5 hours and 30 minutes to the timestamp
+            var newTimestamp = new Date(new Date(timestamp).getTime() + 5 * 60 * 60 * 1000 + 30 * 60 * 1000);
+            var formattedTimestamp = newTimestamp.toISOString().replace("T", " ").split(".")[0]; // Format the timestamp
+
+            $("#timestamp").val(formattedTimestamp); // Set the value of the hidden input field
+
+            var formData = $("#contactForm").serializeArray();
+
+            // Check if all required fields are filled
+            var allFieldsFilled = true;
+            formData.forEach(function (field) {
+                if (field.value.trim() === '') {
+                    allFieldsFilled = false;
+                }
+            });
+
+            if (!allFieldsFilled) {
+                alert("Please fill in all the required fields.");
+                return;
+            }
+
+            $.ajax({
+                url: "https://api.apispreadsheets.com/data/joCiWyHHbwPFltEL/",
+                type: "post",
+                data: formData,
+                success: function () {
+                    alert("Form Data Submitted :)");
+                    displayTimestamp(formattedTimestamp); // Display the timestamp
+                },
+                error: function () {
+                    alert("There was an error :(");
+                }
+            });
+        }
+
+        // Function to display the submission timestamp
+        function displayTimestamp(timestamp) {
+            $("#submittedTimestamp").text("Form Submitted at: " + timestamp);
+        }
+
+        // Attach the SubForm function to the form's submit event
+        $("#contactForm").on("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            SubForm(); // Call the SubForm function to handle the submission
+        });
+    </script>
 </body>
 </html>
-
