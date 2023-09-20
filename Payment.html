@@ -72,7 +72,7 @@
                 document.getElementById("Confirmation").style.backgroundColor = "seagreen";
 
                 document.getElementById("name").innerHTML = "Name: " + fullName;
-                document.getElementById("email").innerHTML = "Email: " + email;
+                document.getElementById("email_out").innerHTML = "Email: " + email;
                 document.getElementById("number").innerHTML = "Phone No.: " + phoneNumber;
 
                 people = document.getElementById("people").value;
@@ -97,12 +97,9 @@
                 // You can submit the form data using AJAX here
                 // Example: $.ajax({ ... });
                 $.ajax({
-				url:"https://api.apispreadsheets.com/data/B4hr3eSzb7S4e0St/",
+				url:"https://api.apispreadsheets.com/data/h6VnLMmnIAbMEf8Y/",
 				type:"post",
 				data:$("#myForm").serializeArray(),
-				success: function(){
-					alert("Form Data Submitted :)")
-				},
 				error: function(){
 					alert("There was an error :(")
 				}
@@ -128,8 +125,10 @@
 </head>
 <body>
     <div class="container">
+        <center>
         <button class="btn">Contact Details</button>
         <button id="Confirmation" class="btn" style="background-color: darkseagreen;">Confirmation</button>
+        </center>
         <div id="input">
             <h3>Contact Details</h3>
             <form id="myForm">
@@ -143,7 +142,7 @@
                 </div>
                 <div class="form-group">
                     <label for="phone_no">Phone No.</label>
-                    <input type="number" id="phone_no" name="phone_no" required />
+                    <input type="tel" id="phone_no" name="phone_no" required />
                 </div>
                 <div class="form-group">
                     <label>Food Preference</label>
@@ -179,7 +178,7 @@
             <ul>
                 <li>Event Name</li>
                 <li id="name">Full Name</li>
-                <li id="email">Email</li>
+                <li id="email_out">Email</li>
                 <li id="number">Phone No.</li>
                 <li id="food">Food</li>
             </ul>
@@ -190,10 +189,11 @@
                 <li id="third"></li>
                 <li id="fourth"></li>
             </ul>
+            <center>While making payments please enter your name</center>
             <h3>Payment Methods</h3>
-            <button>Pay Now</button>
-            <br><br>
             <button onclick="Back()">Back</button>
+            <button style="margin-left: 80%;">Pay Now</button>
+            
         </div>
     </div>
 </body>
